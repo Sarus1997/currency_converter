@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>💱 Currency Converter</h2>
+    <form action="/" method="POST">
+      <label for="amount">จำนวนเงิน (THB):</label>
+      <input type="number" id="amount" name="amount" placeholder="กรอกจำนวนเงิน" required>
+
+      <label for="target_currency">สกุลเงินเป้าหมาย:</label>
+      <select id="target_currency" name="target_currency" required>
+        <option value="AED">AED - ดีแรห์มสหรัฐอาหรับเอมิเรตส์</option>
+        <option value="AFN">AFN - อัฟกานีอัฟกานิสถาน</option>
+        <option value="ALL">ALL - เลกแอลเบเนีย</option>
+        <option value="AMD">AMD - ดรามอาร์เมเนีย</option>
+        <option value="ANG">ANG - กิลเดอร์เนเธอร์แลนด์แอนทิลลิส</option>
+        <option value="AOA">AOA - กวานซาแองโกลา</option>
+        <option value="ARS">ARS - เปโซอาร์เจนตินา</option>
+        <option value="AUD">AUD - ดอลลาร์ออสเตรเลีย</option>
+        <option value="AWG">AWG - ฟลอรินอารูบา</option>
+        <option value="AZN">AZN - มานัตอาเซอร์ไบจาน</option>
+        <option value="BAM">BAM - มาร์กบอสเนียและเฮอร์เซโกวีนา</option>
+        <option value="BBD">BBD - ดอลลาร์บาร์เบโดส</option>
+        <option value="BDT">BDT - ตากาบังกลาเทศ</option>
+        <option value="BGN">BGN - เลฟบัลแกเรีย</option>
+        <option value="BHD">BHD - ดีนาร์บาห์เรน</option>
+        <option value="BIF">BIF - ฟรังก์บุรุนดี</option>
+        <option value="BMD">BMD - ดอลลาร์เบอร์มิวดา</option>
+        <option value="BND">BND - ดอลลาร์บรูไน</option>
+        <option value="BOB">BOB - โบลิเวียโนโบลิเวีย</option>
+        <option value="BRL">BRL - เรียลบราซิล</option>
+        <option value="BSD">BSD - ดอลลาร์บาฮามาส</option>
+        <option value="BTN">BTN - งุลตรัมภูฏาน</option>
+        <option value="BWP">BWP - ปูลาบอตสวานา</option>
+        <option value="BYN">BYN - รูเบิลเบลารุส</option>
+        <option value="BZD">BZD - ดอลลาร์เบลีซ</option>
+        <option value="CAD">CAD - ดอลลาร์แคนาดา</option>
+        <option value="CDF">CDF - ฟรังก์คองโก</option>
+        <option value="CHF">CHF - ฟรังก์สวิส</option>
+        <option value="CLP">CLP - เปโซชิลี</option>
+        <option value="CNY">CNY - หยวนจีน</option>
+        <option value="COP">COP - เปโซโคลอมเบีย</option>
+        <option value="CRC">CRC - โคลอนคอสตาริกา</option>
+        <option value="CUP">CUP - เปโซคิวบา</option>
+        <option value="CZK">CZK - โครูนาเช็ก</option>
+        <option value="DKK">DKK - โครนเดนมาร์ก</option>
+        <option value="DOP">DOP - เปโซโดมินิกัน</option>
+        <option value="DZD">DZD - ดีนาร์แอลจีเรีย</option>
+        <option value="EGP">EGP - ปอนด์อียิปต์</option>
+        <option value="EUR">EUR - ยูโร</option>
+        <option value="FJD">FJD - ดอลลาร์ฟิจิ</option>
+        <option value="GBP">GBP - ปอนด์สเตอร์ลิง</option>
+        <option value="GHS">GHS - เซดีกานา</option>
+        <option value="HKD">HKD - ดอลลาร์ฮ่องกง</option>
+        <option value="IDR">IDR - รูเปียห์อินโดนีเซีย</option>
+        <option value="ILS">ILS - เชเกลอิสราเอล</option>
+        <option value="INR">INR - รูปีอินเดีย</option>
+        <option value="IQD">IQD - ดีนาร์อิรัก</option>
+        <option value="IRR">IRR - เรียลอิหร่าน</option>
+        <option value="ISK">ISK - โครนาไอซ์แลนด์</option>
+        <option value="JMD">JMD - ดอลลาร์จาเมกา</option>
+        <option value="JOD">JOD - ดีนาร์จอร์แดน</option>
+        <option value="JPY">JPY - เยนญี่ปุ่น</option>
+        <option value="KES">KES - ชิลลิงเคนยา</option>
+        <option value="KRW">KRW - วอนเกาหลีใต้</option>
+        <option value="KWD">KWD - ดีนาร์คูเวต</option>
+        <option value="LAK">LAK - กีบลาว</option>
+        <option value="LBP">LBP - ปอนด์เลบานอน</option>
+        <option value="LKR">LKR - รูปีศรีลังกา</option>
+        <option value="MAD">MAD - ดีแรห์มโมร็อกโก</option>
+        <option value="MMK">MMK - จ๊าตเมียนมา</option>
+        <option value="MXN">MXN - เปโซเม็กซิโก</option>
+        <option value="MYR">MYR - ริงกิตมาเลเซีย</option>
+        <option value="NAD">NAD - ดอลลาร์นามิเบีย</option>
+        <option value="NGN">NGN - ไนราไนจีเรีย</option>
+        <option value="NOK">NOK - โครนนอร์เวย์</option>
+        <option value="NPR">NPR - รูปีเนปาล</option>
+        <option value="NZD">NZD - ดอลลาร์นิวซีแลนด์</option>
+        <option value="OMR">OMR - เรียลโอมาน</option>
+        <option value="PEN">PEN - โซลเปรู</option>
+        <option value="PHP">PHP - เปโซฟิลิปปินส์</option>
+        <option value="PKR">PKR - รูปีปากีสถาน</option>
+        <option value="PLN">PLN - ซลอตีโปแลนด์</option>
+        <option value="QAR">QAR - เรียลกาตาร์</option>
+        <option value="RON">RON - เลอูโรมาเนีย</option>
+        <option value="RUB">RUB - รูเบิลรัสเซีย</option>
+        <option value="SAR">SAR - ริยาลซาอุดีอาระเบีย</option>
+        <option value="SEK">SEK - โครนาสวีเดน</option>
+        <option value="SGD">SGD - ดอลลาร์สิงคโปร์</option>
+        <option value="THB">THB - บาทไทย</option>
+        <option value="TRY">TRY - ลีราตุรกี</option>
+        <option value="TWD">TWD - ดอลลาร์ไต้หวัน</option>
+        <option value="UAH">UAH - ฮรีฟเนียยูเครน</option>
+        <option value="USD">USD - ดอลลาร์สหรัฐ</option>
+        <option value="VND">VND - ดองเวียดนาม</option>
+        <option value="ZAR">ZAR - แรนด์แอฟริกาใต้</option>
+
+      </select>
+
+      <button type="submit">แปลงค่าเงิน</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <h3>ผลลัพธ์:</h3>
+      <p>{{ result }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
