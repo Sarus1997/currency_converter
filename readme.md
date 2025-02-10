@@ -17,7 +17,7 @@
 
 1. **Clone โปรเจกต์นี้**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Sarus1997/currency_converter
    cd currency_converter
 
 2. **ติดตั้งข้อมูลที่จำเป็น**
